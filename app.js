@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultDiv = document.getElementById('result');
 
     const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
-
+// Hola 
     recognition.lang = 'es-ES';
 
     recognition.onstart = function () {
