@@ -13,21 +13,44 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     recognition.onresult = function (event) {
-        const transcript = event.results[0][0].transcript;
-        const keyword = 'tamaño 3';
-        const keyword1 = 'Cerrar pestaña';
+        const transcript = event.results[0][0].transcript.toLowerCase(); // Convertir a minúsculas para facilitar la comparación
+        const keywords = ['abrir una pestaña', 'ir a una página', 'modificar el tamaño de la ventana', 'cerrar una pestaña', 'cerrar el navegador']; // Array de palabras clave
+
         resultDiv.innerHTML = `<strong>Resultado:</strong> ${transcript}`;
 
-        if (transcript.includes(keyword)){
-            controltexto.classList.add("fs-1");
-            controltexto.style.color = "red";
-            console.log("Se encontró la palabra 'tamaño 3'.");
-        } 
-
-        
-
-        if (transcript.includes(keyword1)) {
-            window.close();
+        // Verificar si alguna palabra clave está presente en la transcripción
+        for (let i = 0; i < keywords.length; i++) {
+            if (transcript.includes(keywords[i])) {
+                switch (keywords[i]) {
+                    case 'tamaño 3':
+                        controltexto.classList.add("fs-1");
+                        controltexto.classList.add("fs-1");
+                        controltexto.style.color = "red";
+                        console.log("Se encontró la palabra 'tamaño 3'.");
+                        break;
+                    case 'abrir una pestaña':
+                        window.open(); // Abre una nueva pestaña
+                        console.log("Se detectó 'abrir una pestaña'.");
+                        break;
+                    case 'ir a una página':
+                        window.location.href = "https://www.youtube.com/"; // Cambia la URL actual del navegador
+                        console.log("Se detectó 'ir a una página'.");
+                        break;
+                    // case 'modificar el tamaño de la ventana':
+                    //     window.resizeTo(800, 600); // Modifica el tamaño de la ventana del navegador
+                    //     console.log("Se detectó 'modificar el tamaño de la ventana'.");
+                    //     break;
+                    case 'cerrar una pestaña':
+                        window.close(); // Cierra la pestaña actual
+                        console.log("Se detectó 'cerrar una pestaña'.");
+                        break;
+                    // case 'cerrar el navegador':
+                    //     window.close(); // Cierra el navegador
+                    //     console.log("Se detectó 'cerrar el navegador'.");
+                    //     break;
+                    // Agrega más casos según sea necesario
+                }
+            }
         }
 
         // Envía la frase a la base de datos MockAPI
@@ -82,4 +105,5 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 });
+
 
