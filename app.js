@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         listeningText.innerHTML = 'Escuchando...';
     };
 
-    
+
     recognition.onresult = function (event) {
         const transcript = event.results[0][0].transcript.toLowerCase(); // Convertir a minúsculas para facilitar la comparación
         const keywords = ['tamaño 3', 'abrir una pestaña', 'ir a una página', 'modificar ventana', 'cerrar una pestaña', 'cerrar navegador']; // Array de palabras clave
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // URL de tu API de MockAPI
-        const url = 'https://631f96f822cefb1edc4eda3a.mockapi.io/Ordenes';
+        const url = 'https://631f96f822cefb1edc4eda3a.mockapi.io/RecVoz';
 
         // Realizar la solicitud fetch para enviar los datos a la API
         fetch(url, options)
