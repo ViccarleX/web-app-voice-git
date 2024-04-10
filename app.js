@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         listeningText.innerHTML = 'Escuchando...';
     };
 
+    
     recognition.onresult = function (event) {
         const transcript = event.results[0][0].transcript.toLowerCase(); // Convertir a minúsculas para facilitar la comparación
         const keywords = ['tamaño 3', 'abrir una pestaña', 'ir a una página', 'modificar ventana', 'cerrar una pestaña', 'cerrar navegador']; // Array de palabras clave
