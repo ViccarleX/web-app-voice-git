@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Identificación de Orden por Voz con Java Scrip</title>
+    <title>Identificación de Orden por Voz con JavaScript</title>
 </head>
 <body>
 
@@ -13,13 +13,32 @@
 </nav>
 
 <div class="container mt-5">
-    <span class = "fs-1 fw-bold fst-italic" id="controltexto">Control de textos</span>
-</div>
+    <div class="row">
+        <div class="col-md-9">
+            <span class="fs-1 fw-bold fst-italic" id="controltexto">Control de textos</span>
+            <div class="container mt-4">
+                <button id="startBtn" class="btn btn-primary">Iniciar Escucha</button>
+                <div id="listeningText" class="mt-3"></div>
+                <div id="result" class="mt-3"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">Despues de oprimir el boton de Iniciar Escuha tomara estas ordenes y realizara una acción</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Tamaño 3</li>
+                        <li>Abrir una pestaña</li>
+                        <li>Ir a una página</li>
+                        <li>Cerrar pestaña</li>
+                        <li>Cerrar Navegador</li>
 
-<div class="container mt-4">
-    <button id="startBtn" class="btn btn-primary">Iniciar Escucha</button>
-    <div id="listeningText" class="mt-3"></div>
-    <div id="result" class="mt-3"></div>
+                        <!-- Agrega más comandos según sea necesario -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer class="bg-dark text-white text-center p-3 mt-5">
@@ -30,4 +49,5 @@
 <script src="app.js"></script>
 </body>
 </html>
+
 
